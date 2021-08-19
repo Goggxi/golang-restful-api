@@ -119,8 +119,8 @@
       },
       "put": {
         "tags": ["Category API"],
-        "description": "Update category",
-        "summary": "Update category",
+        "description": "Update category By Id",
+        "summary": "Update category By Id",
         "parameters": [
           {
             "name": "categoryId",
@@ -139,7 +139,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success get category",
+            "description": "Success update category",
             "content": {
               "application/json": {
                 "schema": {
@@ -153,6 +153,38 @@
                     },
                     "data": {
                       "$ref": "#/components/schemas/Category"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Category API"],
+        "description": "Delete category By Id",
+        "summary": "Delete category By Id",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "Category Id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success delete category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code" : {
+                      "type": "number"
+                    },
+                    "status": {
+                      "type": "string"
                     }
                   }
                 }
